@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* Media Query Level 5 */
+/* @media all and (prefers-color-scheme: dark) {
+    :root {
+        background-color: black;
+        color: white;
+    }
+} */
+
+/* Media Query Level 4 */
+/* @media all and (width >= 480px) and (width <= 800px) {
+    h1 {
+        color: red;
+    }
+} */
+
+/* @media all and (480px <= width <= 800px) {
+    h1 {
+        color: red;
+    }
+} */

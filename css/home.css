@@ -1,0 +1,192 @@
+header {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-bottom: 1px solid lightgray;
+}
+
+header img {
+    width: 100px;
+}
+
+aside {
+    position: sticky;
+    top: 0;
+}
+
+aside nav {
+    position: absolute;
+    width: 150px;
+    list-style-type: none;
+}
+
+aside nav li {
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+        background-color: lightgray;
+    }
+}
+
+main {
+    margin-left: 150px;
+    border-left: 1px solid lightgray;
+}
+
+main > div:first-child img{
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+main > div:nth-child(2) {
+    display: flex;
+    align-items: center;
+}
+
+/* main > div:nth-child(2) > * {
+    flex-shrink: 0;
+} */
+
+#content {
+    padding: 10px;
+    text-align: center;
+}
+
+#content h1 {
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 20px;;
+}
+
+#img-welcome {
+    width: 250px;
+    object-fit: contain;
+    margin-top: 30px;
+    animation-name: welcome;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes welcome {
+    from {
+        transform: rotateY(0);
+    }
+
+    50% {
+        transform: rotateY(360deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+#image-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+#image-container div{
+    width: 33.33%;
+    height: 200px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+
+    &:first-child {
+        background-image: url('../img/thumbnails/1.png');
+    }
+
+    &:nth-child(2) {
+        background-image: url('../img/thumbnails/2.jpg');
+    }
+    
+    &:last-child {
+        background-image: url('../img/thumbnails/3.jpg');
+    }    
+}
+
+footer {
+    text-align: center;
+    border-top: 1px solid lightgray;
+    padding: 10px;
+}
+
+@media all and (prefers-color-scheme: dark) {
+    :root {
+        background-color: #282828;
+        color: rgb(230, 230, 230);
+    }
+
+    * {
+        border-color: rgb(75, 75, 75) !important;
+    }
+
+    aside nav li:hover {
+        background-color:  rgb(75, 75, 75) !important;
+    }
+}
+
+@media all and (min-width: 768px) and (max-width: 1199px) {
+
+    #img-welcome {
+        display: none;
+    }
+}
+
+@media all and (max-width: 767px) {
+    aside {
+        position: relative;
+        width: 100%;
+    }
+
+    aside nav {
+        position: relative;
+        text-align: center;
+        width: 100%;
+    }
+
+    aside nav li {
+        border-bottom: 1px solid lightgray;
+    }
+
+    main {
+        margin: 0;
+    }
+
+    #img-welcome {
+        display: none;
+    }
+
+    main > div:first-child {
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+
+    main > div:first-child img{ 
+        padding: 0;
+        border-radius: 0;
+        height: 50px;
+        opacity: 0.2;
+    }
+
+    #image-container {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    #image-container div {
+        width: 100%;
+        height: 250px;
+    }
+}
